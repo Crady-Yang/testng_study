@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="thread" parallel="classes" thread-count="2">
+
+    <!--
+
+    parallel 的 tests 级别：不同test tag 下用例可以在不同线程下执行，相同test tag下用例只能在同一个线程中执行 -ok
+
+    parallel 的 classes 级别：相同class tag下用例在同一个线程执行，不同的classes可以再多个线程下执行
+
+    parallel 的 methods 级别：所有用例都可以在不同线程下执行 -ok
+
+    thread-count 代表最大并发线程数
+    xml文件配置不能指定线程池，只有方法上才可以指定线程池
+    -->
+
+    <test name = "demo1">
+        <classes>
+            <class name="com.course.code.multiThread.MultiThreadOnXml"/>
+            <class name="com.course.code.BasicAnnotation"/>
+        </classes>
+    </test>
+
+    <test name = "demo2">
+        <classes name="d3">
+            <class name="com.course.code.BasicAnnotation"/>
+        </classes>
+    </test>
+
+</suite>
